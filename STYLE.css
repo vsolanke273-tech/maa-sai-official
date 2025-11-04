@@ -88,3 +88,47 @@ button:hover { background: #ffd633; }
   header h1 { font-size: 20px; }
   nav a { display: inline-block; margin: 5px; }
 }
+header {
+  background-color: #ffcc00;
+  text-align: center;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  margin-bottom: 8px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #111;
+  cursor: pointer;
+}
+
+nav {
+  margin-bottom: 5px;
+}
+
+nav a {
+  color: #111;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 5px;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
