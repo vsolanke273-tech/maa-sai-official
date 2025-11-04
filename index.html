@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Responsive viewport: layout fits device width -->
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maa Sai Classes - Home</title>
   <link rel="stylesheet" href="STYLE.css" />
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
-      <h1><a href="index.html" class="home-link">Maa Sai Classes</a></h1>
-      <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav id="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="courses.html">Courses</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap">
+      <!-- Absolute home link so it opens home from any folder -->
+      <a class="brand" href="/MAA-SAI-CLASSES-TUTION/index.html">Maa Sai Classes</a>
+
+      <button id="menu-btn" aria-label="Toggle menu">☰</button>
+
+      <nav id="main-nav" class="main-nav">
+        <a href="/MAA-SAI-CLASSES-TUTION/index.html">Home</a>
+        <a href="/MAA-SAI-CLASSES-TUTION/about.html">About</a>
+        <a href="/MAA-SAI-CLASSES-TUTION/courses.html">Courses</a>
+        <a href="/MAA-SAI-CLASSES-TUTION/gallery.html">Gallery</a>
+        <a href="/MAA-SAI-CLASSES-TUTION/contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero container">
-      <h2>Welcome to Maa Sai Classes</h2>
-      <p>Best Coaching Institute for Class 1 to 12 — Where Learning Meets Success.</p>
-    </section>
-  </main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Welcome to Maa Sai Classes</h1>
+      <p class="lead">Guided by <strong>Rakhiben Solanke</strong> — the best tuition for School & College Students in Udhna, Surat.</p>
+      <a class="btn btn-primary" href="/MAA-SAI-CLASSES-TUTION/courses.html">View Our Courses</a>
+    </div>
+  </section>
 
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-center">
+  <!-- Why choose -->
+  <section class="why">
+    <div class="wrap">
+      <h2>Why Choose Us?</h2>
+      <p class="center">Maa Sai Classes offers personalized attention, strong conceptual teaching, and consistent test practice. We focus on helping each student reach their academic potential and build confidence for exams.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-left">
         <p>📍 Plot No.114, Shivnagar, Behind Harinagar-2, Udhna, Surat</p>
-        <p>👤 Username: rakhiben_solanke123</p>
-        <p>📞 Contact: 9624626862</p>
+        <p>👤 <span class="muted">Username:</span> rakhiben_solanke123</p>
       </div>
       <div class="footer-right">
-        <a href="https://wa.me/919624626862" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <img id="whatsapp-icon" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-               alt="WhatsApp" width="40" height="40">
-        </a>
+        <p>© 2025 Maa Sai Classes</p>
       </div>
     </div>
   </footer>
 
-  <script src="java.js"></script>
+  <!-- Floating WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/919624626862" target="_blank" aria-label="WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
