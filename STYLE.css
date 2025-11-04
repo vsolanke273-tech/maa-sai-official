@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f5ff;
+}
+
+header {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero, .content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gallery-box {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gallery-box img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+footer {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left, .footer-center, .footer-right {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.whatsapp-icon {
+  width: 35px;
+  height: 35px;
+  filter: drop-shadow(0 0 3px white);
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+  transform: scale(1.1);
+}
+
+
+.home-link {
+  text-decoration: none;
+  color: white;
+}
+/* ✅ WhatsApp Icon Pulse Effect */
+.pulse {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+  filter: drop-shadow(0 0 8px #25D366);
+}
+
