@@ -2,39 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Responsive viewport: layout fits device width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maa Sai Classes - Home</title>
   <link rel="stylesheet" href="STYLE.css" />
 </head>
 <body>
   <header>
-    <h1><a href="index.html" class="home-link">Maa Sai Classes</a></h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="courses.html">Courses</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <h1><a href="index.html" class="home-link">Maa Sai Classes</a></h1>
+      <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero container">
       <h2>Welcome to Maa Sai Classes</h2>
       <p>Best Coaching Institute for Class 1 to 12 — Where Learning Meets Success.</p>
     </section>
   </main>
 
   <footer>
-  <p>📍 Plot No.114, Shivnagar, Behind Harinagar-2, Udhna, Surat</p>
-  <p>👤 Username: rakhiben_solanke123</p>
-  <p>📞 Contact: 9624626862</p>
-  <a href="https://wa.me/919624626862" target="_blank">
-    <img id="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-         alt="WhatsApp" width="35" height="35">
-  </a>
-</footer>
-
+    <div class="container footer-inner">
+      <div class="footer-center">
+        <p>📍 Plot No.114, Shivnagar, Behind Harinagar-2, Udhna, Surat</p>
+        <p>👤 Username: rakhiben_solanke123</p>
+        <p>📞 Contact: 9624626862</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://wa.me/919624626862" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <img id="whatsapp-icon" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+               alt="WhatsApp" width="40" height="40">
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <script src="java.js"></script>
 </body>
