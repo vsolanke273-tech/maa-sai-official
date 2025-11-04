@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gallery - Maa Sai Classes</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Maa Sai Classes</title>
   <link rel="stylesheet" href="STYLE.css" />
+  <script src="java.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="/MAA-SAI-CLASSES-TUTION/index.html">Maa Sai Classes</a>
-      <button id="menu-btn-4" aria-label="Toggle menu">☰</button>
-      <nav id="main-nav-4" class="main-nav">
-        <a href="/MAA-SAI-CLASSES-TUTION/index.html">Home</a>
-        <a href="/MAA-SAI-CLASSES-TUTION/about.html">About</a>
-        <a href="/MAA-SAI-CLASSES-TUTION/courses.html">Courses</a>
-        <a href="/MAA-SAI-CLASSES-TUTION/gallery.html">Gallery</a>
-        <a href="/MAA-SAI-CLASSES-TUTION/contact.html">Contact</a>
-      </nav>
-    </div>
+  <header>
+    <h1 onclick="goHome()">Maa Sai Classes</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-  <main class="wrap content">
-    <h2>Our Gallery</h2>
-    <div class="gallery-grid">
-      <img src="https://via.placeholder.com/800x500" alt="Gallery 1" />
-      <img src="https://via.placeholder.com/800x500" alt="Gallery 2" />
-      <img src="https://via.placeholder.com/800x500" alt="Gallery 3" />
+  <section class="page-content">
+    <h2>Gallery</h2>
+    <div class="gallery-box">
+      <p>📸 Classroom Photo (Demo)</p>
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <div class="footer-left">
-        <p>📍 Plot No.114, Shivnagar, Behind Harinagar-2, Udhna, Surat</p>
-      </div>
-      <div class="footer-right">
-        <p>© 2025 Maa Sai Classes</p>
-      </div>
-    </div>
+  <footer>
+    <p>📍 Plot No. 114, Shivnagar, Behind Harinagar-2, Udhna, Surat</p>
+    <p>📞 9624626862</p>
+    <p>📸 Follow us on Instagram:
+      <a href="https://www.instagram.com/rakhiben_solanke123" target="_blank">@rakhiben_solanke123</a>
+    </p>
+    <p>© 2025 Maa Sai Classes | Designed by Vaibhav Solanke</p>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/919624626862" target="_blank" aria-label="WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-  </a>
-
-  <script src="java.js"></script>
+  <a href="https://wa.me/919624626862" class="whatsapp-float" id="whatsapp-icon">💬</a>
 </body>
 </html>
-
