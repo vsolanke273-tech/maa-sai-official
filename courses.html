@@ -2,43 +2,51 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Courses - Maa Sai Classes</title>
   <link rel="stylesheet" href="STYLE.css" />
 </head>
 <body>
   <header>
-    <h1><a href="index.html" class="home-link">Maa Sai Classes</a></h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="courses.html">Courses</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="container header-inner">
+      <h1><a href="index.html" class="home-link">Maa Sai Classes</a></h1>
+      <button id="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courses.html">Courses</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section class="content">
+    <section class="content container">
       <h2>Our Courses</h2>
       <ul>
         <li>Class 1 to 12 (GSEB)</li>
-        <li>STD 1 TO 10 ALL SUBJECT</li>
-        <li>11 TO 12 ONLY COMMERCE AND ARTS</li>
+        <li>STD 1 to 10 — All Subjects</li>
+        <li>11 to 12 — Commerce & Arts</li>
       </ul>
     </section>
   </main>
 
- <footer>
-  <p>📍 Plot No.114, Shivnagar, Behind Harinagar-2, Udhna, Surat</p>
-  <p>👤 Username: rakhiben_solanke123</p>
-  <p>📞 Contact: 9624626862</p>
-  <a href="https://wa.me/919624626862" target="_blank">
-    <img id="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-         alt="WhatsApp" width="35" height="35">
-  </a>
-</footer>
-
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-center">
+        <p>📍 Plot No.114, Shivnagar, Behind Harinagar-2, Udhna, Surat</p>
+        <p>👤 Username: rakhiben_solanke123</p>
+        <p>📞 Contact: 9624626862</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://wa.me/919624626862" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <img id="whatsapp-icon" class="whatsapp-icon" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+               alt="WhatsApp" width="40" height="40">
+        </a>
+      </div>
+    </div>
+  </footer>
 
   <script src="java.js"></script>
 </body>
