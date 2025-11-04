@@ -1,72 +1,73 @@
-// Unified site JS: welcome (only once), nav toggle, whatsapp pulse
-document.addEventListener("DOMContentLoaded", () => {
-  // 1) Welcome modal shown only once per browser using localStorage
+// script.js - unified site script (welcome once, menu toggle, whatsapp effect)
+
+// Show welcome modal only once (localStorage)
+document.addEventListener('DOMContentLoaded', () => {
+  // show welcome modal if not seen before
   try {
-    const seen = localStorage.getItem("msc_seen_welcome");
-    if (!seen) {
-      showWelcomeModal();
-      try { localStorage.setItem("msc_seen_welcome", "1"); } catch (e) { /* ignore storage errors */ }
+    if (!localStorage.getItem('msc_welcome_seen')) {
+      showWelcome();
+      localStorage.setItem('msc_welcome_seen', '1');
     }
-  } catch (err) {
-    // if localStorage blocked, fallback: show once per session
-    if (!sessionStorage.getItem("msc_seen_welcome_session")) {
-      showWelcomeModal();
-      sessionStorage.setItem("msc_seen_welcome_session", "1");
+  } catch (e) {
+    // fallback to sessionStorage if localStorage blocked
+    if (!sessionStorage.getItem('msc_welcome_seen')) {
+      showWelcome();
+      sessionStorage.setItem('msc_welcome_seen', '1');
     }
   }
 
-  // 2) WhatsApp pulse effect (keeps previous look)
-  const whatsappIcons = document.querySelectorAll("#whatsapp-icon");
-  whatsappIcons.forEach(icon => {
-    // toggle pulse every 900ms
-    setInterval(() => icon.classList.toggle("pulse"), 900);
+  // Menu toggles (multiple pages each have a menu button id)
+  const menuButtons = document.querySelectorAll('[id^="menu-btn"]');
+  menuButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // find corresponding nav id nearby (same index)
+      // fallback: toggle the first .main-nav
+      const nav = btn.nextElementSibling && btn.nextElementSibling.classList.contains('main-nav')
+                  ? btn.nextElementSibling
+                  : document.querySelector('.main-nav');
+      if (nav) nav.style.display = (nav.style.display === 'flex') ? 'none' : 'flex';
+    });
   });
 
-  // 3) Mobile nav toggle
-  const navToggle = document.getElementById("nav-toggle");
-  const mainNav = document.getElementById("main-nav");
-  if (navToggle && mainNav) {
-    navToggle.addEventListener("click", () => {
-      mainNav.classList.toggle("show");
-    });
+  // WhatsApp float glow effect (toggle class)
+  const w = document.querySelector('.whatsapp-float img');
+  if (w) {
+    // add glow class to parent so both img and shadow animate
+    const parent = w.closest('.whatsapp-float');
+    parent.classList.add('whatsapp-glow');
+    // small hover scale
+    parent.addEventListener('mouseenter', () => parent.style.transform = 'translateY(-4px) scale(1.02)');
+    parent.addEventListener('mouseleave', () => parent.style.transform = '');
   }
 
-  // Prevent accidental pinch-zoom triggered by double-tap zoom on older devices:
-  // (do not disable user zoom; we just prevent double-tap zoom by preventing default double-tap timing)
-  let lastTouch = 0;
-  document.addEventListener('touchstart', function (e) {
-    const now = Date.now();
-    if (now - lastTouch <= 300) {
-      e.preventDefault(); // prevents double-tap zoom on some mobile browsers
-    }
-    lastTouch = now;
-  }, { passive: false });
-
+  // Ensure brand link works from any folder: if absolute root path not match, fallback to relative index
+  // (No change necessary if you host at /MAA-SAI-CLASSES-TUTION/)
 });
 
-/* Helper: create and show a simple welcome modal */
-function showWelcomeModal() {
-  const modal = document.createElement("div");
-  modal.className = "welcome-modal";
+// Create and show welcome modal
+function showWelcome() {
+  const modal = document.createElement('div');
+  modal.className = 'welcome-modal';
   modal.innerHTML = `
-    <div class="welcome-card" role="dialog" aria-modal="true" aria-label="Welcome to Maa Sai Classes">
+    <div class="welcome-card" role="dialog" aria-modal="true" aria-label="Welcome">
       <h3>Welcome to Maa Sai Classes 🎓</h3>
       <p>Best Coaching Institute for Class 1 to 12 — Where Learning Meets Success.</p>
-      <button id="close-welcome" class="btn">Continue</button>
+      <div style="display:flex;gap:12px;justify-content:center">
+        <button id="btn-continue" class="btn-continue" style="background: #ffd000; border: none; padding:10px 18px; border-radius:8px; font-weight:700; cursor:pointer;">Continue</button>
+        <a href="/MAA-SAI-CLASSES-TUTION/courses.html" class="btn-continue" style="background:#1f2a2d; color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; font-weight:700;">Visit Courses</a>
+      </div>
     </div>
   `;
   document.body.appendChild(modal);
 
-  const close = document.getElementById("close-welcome");
-  close.addEventListener("click", () => {
-    modal.remove();
-  });
+  const btn = document.getElementById('btn-continue');
+  btn && btn.addEventListener('click', () => modal.remove());
 
-  // allow escape key to close
-  document.addEventListener("keydown", function onKey(e) {
-    if (e.key === "Escape") {
+  // allow Escape to close
+  document.addEventListener('keydown', function esc(e) {
+    if (e.key === 'Escape') {
       modal.remove();
-      document.removeEventListener("keydown", onKey);
+      document.removeEventListener('keydown', esc);
     }
   });
 }
